@@ -1,2 +1,3 @@
+---hr계정 언락하고 비밀번호 1234로 정한다
 ALTER USER HR ACCOUNT UNLOCK
 IDENTIFIED BY 1234;
