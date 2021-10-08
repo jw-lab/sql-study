@@ -111,3 +111,61 @@ WHERE (job_id,salary) IN
 FROM employees
 GROUP BY job_id)
 ORDER BY salary DESC;
+
+
+--집합
+--UNION 합집합: 중복을 제거한다.
+SELECT employee_id 직원번호,job_id 직종
+FROM employees
+UNION
+SELECT employee_id ,job_id 
+FROM job_history;
+
+--UNION ALL 합집합: 중복을 제거하지 않는다.
+SELECT employee_id 직원번호,job_id 직종
+FROM employees
+UNION ALL
+SELECT employee_id ,job_id 
+FROM job_history;
+
+--INTERSECT 교집합
+SELECT employee_id 직원번호,job_id 직종
+FROM employees
+INTERSECT
+SELECT employee_id ,job_id 
+FROM job_history;
+
+--MINUS 차집합
+SELECT employee_id 직원번호,job_id 직종
+FROM employees
+MINUS
+SELECT employee_id ,job_id 
+FROM job_history;
+
+--예제
+SELECT department_id
+FROM employees
+UNION
+SELECT department_id
+FROM departments;
+
+--예제
+SELECT department_id
+FROM employees
+UNION ALL
+SELECT department_id
+FROM departments;
+
+--예제
+SELECT department_id
+FROM employees
+INTERSECT
+SELECT department_id
+FROM departments;
+
+--예제
+SELECT department_id
+FROM departments
+MINUS
+SELECT department_id
+FROM employees;
