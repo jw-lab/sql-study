@@ -185,7 +185,7 @@ ALTER TABLE 직원
 ADD(커미션 NUMBER DEFAULT 0);
 
 --열을 수정 (데이터 타입을 바꾸거나 용량을 늘릴때)
-DESC 직원;
+DESC 직원2;
 ALTER TABLE 직원
 MODIFY (성별 VARCHAR2(10));
 
@@ -200,3 +200,6 @@ ALTER TABLE 직원
 DROP COLUMN 커미션;
 ALTER TABLE 직원
 DROP COLUMN 성별;
+
+--테이블의 이름 수정
+RENAME 직원 TO 직원2;
